@@ -22,6 +22,7 @@ namespace ConsoleStudy
             var square = ma2(4);
             var cube = ma3(4);
             Console.WriteLine("{0}\t{1}\t{2}\n",multiByTwo,square,cube);
+            ReflectionTest.GetAppPath();
         }
     }
 
@@ -30,6 +31,18 @@ namespace ConsoleStudy
         public static double Double(double n)
         {
             return n*2;
+        }
+        //public event double MessAllThings;
+        //public EventHandler event1(Object sender,EventArgs args);
+    }
+
+    class ReflectionTest
+    {
+        public static void GetAppPath()
+        {
+            string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            Console.WriteLine(path);
+            Console.WriteLine(System.IO.Path.GetDirectoryName(path));
         }
     }
 }
